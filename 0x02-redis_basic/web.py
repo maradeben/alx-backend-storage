@@ -14,7 +14,7 @@ def counter(method: Callable) -> Callable:
     @wraps(method)
     def wrapper(*args, **kwargs):
         """ the wrapper """
-        url_key = 'count:{}'.format(url))
+        url_key = 'count:{}'.format(url)
         cache.incr(url_key)
         cached_html = cache.get(url_key)
         if cached_html:
